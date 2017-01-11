@@ -17,7 +17,6 @@ p {
 
 li.seen {
     color: silver;
-    font-size: 11px;
 }
 li.unseen {
     color: #B22222;
@@ -31,4 +30,5 @@ li.unseen {
 }
 #biography a:hover {
     text-decoration: underline;
+    color: white;
 }
