@@ -30,5 +30,5 @@ li.unseen {
 }
 #biography a:hover {
     text-decoration: underline;
-    color: white;
+    color: red;
 }
