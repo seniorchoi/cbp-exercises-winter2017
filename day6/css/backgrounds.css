@@ -50,3 +50,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', e
     background: transparent url('../img/nebula.jpg') left top/cover no-repeat fixed;
     box-sizing: border-box;
 }
+
+ul {
+    list-style-type: none;
+}
+ul ul {
+    list-style-image: url('http://classes.codingbootcamp.cz/assets/classes/8/bullet.png');
+}

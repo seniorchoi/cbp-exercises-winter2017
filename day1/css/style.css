@@ -2,7 +2,7 @@ body {
     background-color: #E6E6FA ;
 }
 h1 {
-    color: red;
+    color: green;
 }
 span {
     color: red;
@@ -54,3 +54,20 @@ h2 {
     font-variant: small-caps;
 }
 
+#biography {
+    
+}
+div.red {
+    border: 1px solid red;
+    position: relative;
+}
+div.red .abs_element {
+    color: white;
+    background: black;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
