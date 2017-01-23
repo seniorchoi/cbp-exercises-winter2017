@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
   <title>Javascript</title>
 
   <style>
@@ -17,6 +22,13 @@
       padding: 2em;
       max-width: 1000px;
       margin: 0 auto;
+    }
+    #mousepos {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        border: 1px solid black;
+        padding: 0.25em;
     }
   </style>
 
@@ -33,14 +45,46 @@
 
     <h2 id="subheading">End of playground</h2>
 
+    <button id="button">CLICK ME!</button>
+
   </div>
+
+  <div id="mousepos">
+      <div>X: <span id="mousepos_x"></span></div>
+      <div>Y: <span id="mousepos_y"></span></div>
+  </div>
+
+  <div class="foo">first</div>
+  <div class="foo">second</div>
+  <div class="foo">third</div>
 
 
   <script>
 
+  //$('.foo').html('New HTML');
+  $('.foo'); // the jQuery selection object
+  $('.foo')[0]; // the first HTML element in the selection object (= plain JS element)
+  $('.foo')[0].innerHTML = 'New HTML';
+
+  var body = $(document.body);
+  body.on('mousemove', function(event) {
+    // do something with event
+    
+    $('#mousepos_x').html(event.pageX); // jQuery way
+    document.getElementById('mousepos_x').innerHTML = event.pageX; // plain JS way
+
+    $('#mousepos_y').html(event.pageY); // jQuery way
+    document.getElementById('mousepos_y').innerHTML = event.pageY; // plain JS way
+  });
+  
   // write a function that would change the headline of the page
   function change_heading(new_heading) {
-    document.getElementById('heading').innerHTML = new_heading;
+    var heading = document.getElementById('heading');
+    heading.innerHTML = new_heading;
+
+    /*
+    document.getElementById('heading').innerHTML; // chaining
+    */
   }
 
   // call the function
@@ -57,6 +101,24 @@
   }
   change_any_element('heading', 'This is a heading');
   change_any_element('subheading', 'This is a subheading');
+
+  /**
+   * logs the type of a given value
+   * 
+   * adds a simple sentence to make the output nice
+   * the value can be of any type
+   * @param value - the value to be tested
+   */
+  function log_value_type(value) {
+    var type = typeof value;
+    console.log(value);
+    console.log('The type of the value above is '+type);
+  }
+
+  log_value_type(3.14);
+  log_value_type("My name is Neo!");
+  log_value_type([1,2,3,4]);
+  log_value_type(document);
 
   </script>
 
