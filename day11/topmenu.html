@@ -36,11 +36,24 @@ nav .links {
 nav .links > div {
     display: inline-block;
     margin: 0 0.5em;
+    position: relative;
+}
+nav .links > div .submenu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: darkgray;
+    color: #000000;
+    padding: 1em;
+    display: none;
+}
+nav .links > div:hover .submenu {
+    display: block;
 }
     </style>
 </head>
 <body>
-    
+
     <nav>
         MENU
 
@@ -50,6 +63,12 @@ nav .links > div {
             </div>
             <div>
                 <a href="#">Link #2</a>
+                <div class="submenu">
+                    <a href="#">Link #1</a>
+                    <a href="#">Link #2</a>
+                    <a href="#">Link #3</a>
+                    <a href="#">Link #4</a>
+                </div>
             </div>
         </div>
     </nav>
