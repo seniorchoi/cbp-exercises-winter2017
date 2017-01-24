@@ -46,5 +46,28 @@ define('MY_OS', 'Windows 10');
     <br />
     Today is <?php echo celsius_to_fahrenheit(-6); ?>&deg; F
 
+    <?php
+
+    $male = true;
+    $old = 1;
+    $user_is_admin = true;
+
+    function print_is_even($number)
+    {
+        $result = $number % 2 == 0 ? 'even' : 'odd';
+
+        echo $result;
+    }
+
+    $number_to_test = 14;
+    ?>
+    
+    I am a<?php echo $male == true ? ( $old ? 'n old male' : ' young male' ) : 'female'; ?>
+
+    <div class="foo <?php echo $user_is_admin ? 'shown' : 'hidden'; ?>">
+        The number <?php echo $number_to_test; ?> is <?php echo print_is_even($number_to_test); ?>
+    </div>
+
+
 </body>
 </html>
