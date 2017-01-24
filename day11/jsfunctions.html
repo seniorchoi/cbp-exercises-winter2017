@@ -30,6 +30,17 @@
         border: 1px solid black;
         padding: 0.25em;
     }
+    #toggle {
+        display: inline-block;
+        border-radius: 0.5em;
+        padding: 0.5em;
+        background-color: teal;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    #toggle.clicked {
+        background-color: violet;
+    }
   </style>
 
 </head>
@@ -46,6 +57,8 @@
     <h2 id="subheading">End of playground</h2>
 
     <button id="button">CLICK ME!</button>
+    
+    <div id="toggle">TOGGLE</div>
 
   </div>
 
@@ -61,10 +74,22 @@
 
   <script>
 
+  var toggle = $('#toggle');
+
+  toggle.on('click', function() {
+    $(this).toggleClass('clicked');
+  });
+/*
   //$('.foo').html('New HTML');
   $('.foo'); // the jQuery selection object
   $('.foo')[0]; // the first HTML element in the selection object (= plain JS element)
   $('.foo')[0].innerHTML = 'New HTML';
+*/
+
+var plain_button = document.getElementById('button');
+var jquery_button = $('#button');
+console.log(plain_button);
+console.log(jquery_button);
 
   var body = $(document.body);
   body.on('mousemove', function(event) {
