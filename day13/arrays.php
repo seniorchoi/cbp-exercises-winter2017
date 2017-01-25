@@ -94,5 +94,18 @@ var_show($car_we_will_get);
     ?>
     We will get <?php echo $car_we_will_get; ?>
 
+    <hr style="clear: both" />
+
+    <?php 
+    echo '<ul>';
+    foreach($cars_i_can_stand as $brand => $price)
+    {
+        echo '<li>Price of ' . $brand . ' is ' . $price . '</li>';
+
+    }
+    echo '</ul>';
+
+    ?>
+
 </body>
 </html>
